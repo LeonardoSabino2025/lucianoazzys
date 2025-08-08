@@ -1,0 +1,258 @@
+<<<<<<< HEAD
+/* Responsive Styles */
+/* Luciano Azzys - Designer de Eventos Portfolio */
+
+@media (max-width: 1024px) {
+    /* About Section */
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-2xl);
+    }
+
+    .about-image {
+        display: none;
+    }
+
+    /* Contact Section */
+    .contact-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Navbar */
+    .navbar {
+        padding: var(--spacing-sm) 0;
+    }
+
+    .nav-container {
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+    }
+    
+    .nav-logo {
+        flex-direction: row;
+        gap: var(--spacing-sm);
+        align-items: center;
+        margin-bottom: var(--spacing-md);
+    }
+    
+    .nav-logo .logo-subtitle {
+        display: none;
+    }
+
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.98);
+        border-top: 1px solid var(--gray-300);
+        padding: var(--spacing-lg) 0;
+    }
+    
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .nav-item {
+        margin: 0;
+    }
+
+    .nav-link {
+        font-size: var(--fs-lg);
+        padding: var(--spacing-md) 0;
+    }
+
+    .hamburger {
+        display: block;
+        position: absolute;
+        right: var(--container-padding);
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    /* Hero Section */
+    .hero {
+        text-align: center;
+    }
+    
+    .hero-title {
+        font-size: clamp(2rem, 8vw, 3.5rem);
+    }
+    
+    .hero-subtitle {
+        font-size: clamp(1rem, 4vw, 1.5rem);
+    }
+
+    /* Services Section */
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Testimonials */
+    .testimonial-card {
+        padding: var(--spacing-3xl);
+    }
+
+    .testimonial-quote p {
+        padding: 0;
+    }
+
+    .testimonial-quote .fas {
+        font-size: var(--fs-2xl);
+    }
+
+    .testimonial-quote .fa-quote-left {
+        top: -10px;
+        left: -10px;
+    }
+
+    .testimonial-quote .fa-quote-right {
+        bottom: -10px;
+        right: -10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-logo {
+        margin-bottom: 0;
+    }
+
+    .nav-logo .logo-text {
+        font-size: var(--fs-xl);
+    }
+
+    .hero {
+        min-height: 500px;
+    }
+=======
+/* Responsive Styles */
+/* Luciano Azzys - Designer de Eventos Portfolio */
+
+@media (max-width: 1024px) {
+    /* About Section */
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-2xl);
+    }
+
+    .about-image {
+        display: none;
+    }
+
+    /* Contact Section */
+    .contact-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Navbar */
+    .navbar {
+        padding: var(--spacing-sm) 0;
+    }
+
+    .nav-container {
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+    }
+    
+    .nav-logo {
+        flex-direction: row;
+        gap: var(--spacing-sm);
+        align-items: center;
+        margin-bottom: var(--spacing-md);
+    }
+    
+    .nav-logo .logo-subtitle {
+        display: none;
+    }
+
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.98);
+        border-top: 1px solid var(--gray-300);
+        padding: var(--spacing-lg) 0;
+    }
+    
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .nav-item {
+        margin: 0;
+    }
+
+    .nav-link {
+        font-size: var(--fs-lg);
+        padding: var(--spacing-md) 0;
+    }
+
+    .hamburger {
+        display: block;
+        position: absolute;
+        right: var(--container-padding);
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    /* Hero Section */
+    .hero {
+        text-align: center;
+    }
+    
+    .hero-title {
+        font-size: clamp(2rem, 8vw, 3.5rem);
+    }
+    
+    .hero-subtitle {
+        font-size: clamp(1rem, 4vw, 1.5rem);
+    }
+
+    /* Services Section */
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Testimonials */
+    .testimonial-card {
+        padding: var(--spacing-3xl);
+    }
+
+    .testimonial-quote p {
+        padding: 0;
+    }
+
+    .testimonial-quote .fas {
+        font-size: var(--fs-2xl);
+    }
+
+    .testimonial-quote .fa-quote-left {
+        top: -10px;
+        left: -10px;
+    }
+
+    .testimonial-quote .fa-quote-right {
+        bottom: -10px;
+        right: -10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-logo {
+        margin-bottom: 0;
+    }
+
+    .nav-logo .logo-text {
+        font-size: var(--fs-xl);
+    }
+
+    .hero {
+        min-height: 500px;
+    }
+>>>>>>> 4e6d54d4c41d980778cca3fec2b47c3f0075bed8
+}

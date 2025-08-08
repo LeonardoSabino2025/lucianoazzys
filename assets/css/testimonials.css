@@ -1,0 +1,326 @@
+<<<<<<< HEAD
+/* Testimonials Section Styles */
+/* Luciano Azzys - Designer de Eventos Portfolio */
+
+.testimonials {
+    background: linear-gradient(135deg, var(--accent-darkest) 0%, var(--accent-dark) 100%);
+    color: var(--text-white);
+    position: relative;
+}
+
+.testimonials .section-header .section-title,
+.testimonials .section-header .section-description {
+    color: var(--text-white);
+}
+
+.testimonials .section-divider::before {
+    box-shadow: 0 0 0 3px var(--accent-darkest), 0 0 0 5px var(--accent-primary);
+}
+
+.testimonials-carousel {
+    display: flex;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    gap: var(--spacing-2xl);
+    padding: var(--spacing-md);
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+}
+
+.testimonials-carousel::-webkit-scrollbar {
+    display: none;
+}
+
+.testimonial-card {
+    flex: 0 0 100%;
+    max-width: 700px;
+    margin: 0 auto;
+    scroll-snap-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-4xl);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-shadow: var(--shadow-md);
+}
+
+.testimonial-quote {
+    position: relative;
+    margin-bottom: var(--spacing-2xl);
+}
+
+.testimonial-quote .fas {
+    font-size: var(--fs-4xl);
+    color: var(--accent-primary);
+    position: absolute;
+    opacity: 0.2;
+}
+
+.testimonial-quote .fa-quote-left {
+    top: -20px;
+    left: -20px;
+}
+
+.testimonial-quote .fa-quote-right {
+    bottom: -20px;
+    right: -20px;
+}
+
+.testimonial-quote p {
+    font-family: var(--font-tertiary);
+    font-style: italic;
+    font-size: var(--fs-xl);
+    line-height: 1.8;
+    color: var(--text-white);
+    padding: 0 var(--spacing-4xl);
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-xl);
+}
+
+.testimonial-author img {
+    width: 60px;
+    height: 60px;
+    border-radius: var(--radius-full);
+    border: 3px solid var(--accent-primary);
+}
+
+.author-info h4 {
+    font-family: var(--font-secondary);
+    font-size: var(--fs-lg);
+    color: var(--accent-primary);
+    margin: 0;
+}
+
+.author-info p {
+    font-size: var(--fs-sm);
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0;
+}
+
+/* Navigation arrows for testimonials slider */
+.testimonials-navigation {
+    display: none; /* Esconde as setas por padrão (mobile-first) */
+}
+
+@media (min-width: 992px) {
+    .testimonials-navigation {
+        display: block; /* Mostra o container de setas em telas maiores */
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        transform: translateY(-50%);
+        width: 100%;
+        max-width: var(--container-max);
+        margin: 0 auto;
+        padding: 0 var(--spacing-xl);
+        z-index: 2;
+    }
+    
+    .slider-arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.7);
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        color: var(--accent-darkest);
+        font-size: var(--fs-lg);
+        box-shadow: var(--shadow-sm);
+        cursor: pointer;
+        transition: var(--transition-normal);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .slider-arrow:hover {
+        background: var(--accent-primary);
+        color: var(--white);
+        border-color: var(--accent-primary);
+        box-shadow: var(--shadow-md);
+    }
+
+    .slider-arrow.prev {
+        left: 0;
+        transform: translate(-150%, -50%);
+    }
+
+    .slider-arrow.next {
+        right: 0;
+        transform: translate(150%, -50%);
+    }
+=======
+/* Testimonials Section Styles */
+/* Luciano Azzys - Designer de Eventos Portfolio */
+
+.testimonials {
+    background: linear-gradient(135deg, var(--accent-darkest) 0%, var(--accent-dark) 100%);
+    color: var(--text-white);
+    position: relative;
+}
+
+.testimonials .section-header .section-title,
+.testimonials .section-header .section-description {
+    color: var(--text-white);
+}
+
+.testimonials .section-divider::before {
+    box-shadow: 0 0 0 3px var(--accent-darkest), 0 0 0 5px var(--accent-primary);
+}
+
+.testimonials-carousel {
+    display: flex;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    gap: var(--spacing-2xl);
+    padding: var(--spacing-md);
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+}
+
+.testimonials-carousel::-webkit-scrollbar {
+    display: none;
+}
+
+.testimonial-card {
+    flex: 0 0 100%;
+    max-width: 700px;
+    margin: 0 auto;
+    scroll-snap-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-4xl);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-shadow: var(--shadow-md);
+}
+
+.testimonial-quote {
+    position: relative;
+    margin-bottom: var(--spacing-2xl);
+}
+
+.testimonial-quote .fas {
+    font-size: var(--fs-4xl);
+    color: var(--accent-primary);
+    position: absolute;
+    opacity: 0.2;
+}
+
+.testimonial-quote .fa-quote-left {
+    top: -20px;
+    left: -20px;
+}
+
+.testimonial-quote .fa-quote-right {
+    bottom: -20px;
+    right: -20px;
+}
+
+.testimonial-quote p {
+    font-family: var(--font-tertiary);
+    font-style: italic;
+    font-size: var(--fs-xl);
+    line-height: 1.8;
+    color: var(--text-white);
+    padding: 0 var(--spacing-4xl);
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-xl);
+}
+
+.testimonial-author img {
+    width: 60px;
+    height: 60px;
+    border-radius: var(--radius-full);
+    border: 3px solid var(--accent-primary);
+}
+
+.author-info h4 {
+    font-family: var(--font-secondary);
+    font-size: var(--fs-lg);
+    color: var(--accent-primary);
+    margin: 0;
+}
+
+.author-info p {
+    font-size: var(--fs-sm);
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0;
+}
+
+/* Navigation arrows for testimonials slider */
+.testimonials-navigation {
+    display: none; /* Esconde as setas por padrão (mobile-first) */
+}
+
+@media (min-width: 992px) {
+    .testimonials-navigation {
+        display: block; /* Mostra o container de setas em telas maiores */
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        transform: translateY(-50%);
+        width: 100%;
+        max-width: var(--container-max);
+        margin: 0 auto;
+        padding: 0 var(--spacing-xl);
+        z-index: 2;
+    }
+    
+    .slider-arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.7);
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        color: var(--accent-darkest);
+        font-size: var(--fs-lg);
+        box-shadow: var(--shadow-sm);
+        cursor: pointer;
+        transition: var(--transition-normal);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .slider-arrow:hover {
+        background: var(--accent-primary);
+        color: var(--white);
+        border-color: var(--accent-primary);
+        box-shadow: var(--shadow-md);
+    }
+
+    .slider-arrow.prev {
+        left: 0;
+        transform: translate(-150%, -50%);
+    }
+
+    .slider-arrow.next {
+        right: 0;
+        transform: translate(150%, -50%);
+    }
+>>>>>>> 4e6d54d4c41d980778cca3fec2b47c3f0075bed8
+}

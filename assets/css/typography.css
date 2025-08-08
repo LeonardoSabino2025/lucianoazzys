@@ -1,0 +1,230 @@
+/* Typography Styles */
+/* Luciano Azzys - Designer de Eventos Portfolio */
+
+/* Font Imports are handled in HTML head */
+
+/* Base Typography */
+body {
+    font-family: var(--font-primary);
+    font-size: var(--fs-base);
+    font-weight: var(--font-regular);
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-secondary);
+    font-weight: var(--font-semibold);
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    color: var(--text-dark);
+}
+
+h1 {
+    font-size: var(--fs-6xl);
+    font-weight: var(--font-bold);
+    line-height: 1.1;
+}
+
+h2 {
+    font-size: var(--fs-5xl);
+    font-weight: var(--font-semibold);
+}
+
+h3 {
+    font-size: var(--fs-4xl);
+    font-weight: var(--font-semibold);
+}
+
+h4 {
+    font-size: var(--fs-3xl);
+    font-weight: var(--font-medium);
+}
+
+h5 {
+    font-size: var(--fs-2xl);
+    font-weight: var(--font-medium);
+}
+
+h6 {
+    font-size: var(--fs-xl);
+    font-weight: var(--font-medium);
+}
+
+/* Paragraphs */
+p {
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+    color: var(--text-color);
+}
+
+p:last-child {
+    margin-bottom: 0;
+}
+
+/* Links */
+a {
+    color: var(--accent-primary);
+    text-decoration: none;
+    transition: var(--transition-normal);
+}
+
+a:hover {
+    color: var(--accent-secondary);
+    text-decoration: none;
+}
+
+/* Special Typography Classes */
+.section-title {
+    font-family: var(--font-secondary);
+    font-size: var(--fs-5xl);
+    font-weight: var(--font-bold);
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+    color: var(--text-dark);
+    position: relative;
+}
+
+.section-description {
+    font-family: var(--font-tertiary);
+    font-size: var(--fs-xl);
+    text-align: center;
+    color: var(--text-light);
+    font-style: italic;
+    margin-bottom: var(--spacing-3xl);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-title {
+    font-family: var(--font-secondary);
+    font-size: var(--fs-6xl);
+    font-weight: var(--font-bold);
+    line-height: 1.1;
+    margin-bottom: var(--spacing-lg);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero-subtitle {
+    font-family: var(--font-tertiary);
+    font-size: var(--fs-2xl);
+    font-weight: var(--font-light);
+    font-style: italic;
+    margin-bottom: var(--spacing-2xl);
+    opacity: 0.9;
+}
+
+.signature-quote {
+    font-family: var(--font-tertiary);
+    font-size: var(--fs-xl);
+    font-style: italic;
+    color: var(--accent-primary);
+    margin-bottom: var(--spacing-xl);
+    text-align: center;
+    position: relative;
+}
+
+.signature-quote::before,
+.signature-quote::after {
+    content: '"';
+    font-size: 1.5em;
+    color: var(--accent-secondary);
+    font-weight: bold;
+}
+
+/* Logo Typography */
+.logo-text {
+    font-family: var(--font-secondary);
+    font-size: var(--fs-2xl);
+    font-weight: var(--font-bold);
+    color: var(--text-dark);
+    display: block;
+    line-height: 1;
+}
+
+.logo-subtitle {
+    font-family: var(--font-tertiary);
+    font-size: var(--fs-sm);
+    font-weight: var(--font-light);
+    color: var(--text-light);
+    font-style: italic;
+    display: block;
+    line-height: 1;
+}
+
+/* Text Utilities */
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+.text-primary { color: var(--accent-primary); }
+.text-secondary { color: var(--accent-secondary); }
+.text-dark { color: var(--text-dark); }
+.text-light { color: var(--text-light); }
+.text-white { color: var(--text-white); }
+
+.font-light { font-weight: var(--font-light); }
+.font-regular { font-weight: var(--font-regular); }
+.font-medium { font-weight: var(--font-medium); }
+.font-semibold { font-weight: var(--font-semibold); }
+.font-bold { font-weight: var(--font-bold); }
+
+.font-primary { font-family: var(--font-primary); }
+.font-secondary { font-family: var(--font-secondary); }
+.font-tertiary { font-family: var(--font-tertiary); }
+
+.text-italic { font-style: italic; }
+.text-uppercase { text-transform: uppercase; }
+.text-lowercase { text-transform: lowercase; }
+.text-capitalize { text-transform: capitalize; }
+
+.letter-spacing-wide { letter-spacing: 0.1em; }
+.letter-spacing-wider { letter-spacing: 0.2em; }
+
+/* Responsive Typography */
+@media (max-width: 768px) {
+    h1 {
+        font-size: var(--fs-4xl);
+    }
+    
+    h2 {
+        font-size: var(--fs-3xl);
+    }
+    
+    h3 {
+        font-size: var(--fs-2xl);
+    }
+    
+    .hero-title {
+        font-size: var(--fs-4xl);
+        line-height: 1.2;
+    }
+    
+    .hero-subtitle {
+        font-size: var(--fs-xl);
+    }
+    
+    .section-title {
+        font-size: var(--fs-3xl);
+    }
+    
+    .section-description {
+        font-size: var(--fs-lg);
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: var(--fs-3xl);
+    }
+    
+    .hero-subtitle {
+        font-size: var(--fs-lg);
+    }
+    
+    .section-title {
+        font-size: var(--fs-2xl);
+    }
+}

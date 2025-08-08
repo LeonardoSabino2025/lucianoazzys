@@ -1,0 +1,194 @@
+<<<<<<< HEAD
+/* Portfolio Section Styles - Video version */
+/* Luciano Azzys - Designer de Eventos Portfolio */
+
+.portfolio {
+    background: var(--bg-color);
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-2xl);
+}
+
+.portfolio-item {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    overflow: hidden;
+    transition: var(--transition-normal);
+    display: flex;
+    flex-direction: column;
+}
+
+.portfolio-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-xl);
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    /* Mantém a proporção vertical (ex: 9:16) */
+    padding-top: 177.77%; 
+    overflow: hidden;
+}
+
+.video-container video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    background: rgba(217, 186, 95, 0.8);
+    color: var(--text-white);
+    border-radius: var(--radius-full);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: var(--fs-2xl);
+    cursor: pointer;
+    transition: background 0.3s ease;
+    z-index: 10;
+}
+
+.play-button:hover {
+    background: var(--accent-primary);
+}
+
+.play-button.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.portfolio-item h3 {
+    font-family: var(--font-secondary);
+    font-size: var(--fs-xl);
+    color: var(--accent-dark);
+    margin: var(--spacing-lg) var(--spacing-xl) var(--spacing-sm);
+}
+
+.portfolio-item p {
+    font-size: var(--fs-base);
+    color: var(--text-light);
+    margin: 0 var(--spacing-xl) var(--spacing-xl);
+}
+
+@media (max-width: 768px) {
+    .portfolio-grid {
+        gap: var(--spacing-xl);
+    }
+
+    .portfolio-item h3 {
+        font-size: var(--fs-lg);
+    }
+=======
+/* Portfolio Section Styles - Video version */
+/* Luciano Azzys - Designer de Eventos Portfolio */
+
+.portfolio {
+    background: var(--bg-color);
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-2xl);
+}
+
+.portfolio-item {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    overflow: hidden;
+    transition: var(--transition-normal);
+    display: flex;
+    flex-direction: column;
+}
+
+.portfolio-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-xl);
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    /* Mantém a proporção vertical (ex: 9:16) */
+    padding-top: 177.77%; 
+    overflow: hidden;
+}
+
+.video-container video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    background: rgba(217, 186, 95, 0.8);
+    color: var(--text-white);
+    border-radius: var(--radius-full);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: var(--fs-2xl);
+    cursor: pointer;
+    transition: background 0.3s ease;
+    z-index: 10;
+}
+
+.play-button:hover {
+    background: var(--accent-primary);
+}
+
+.play-button.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.portfolio-item h3 {
+    font-family: var(--font-secondary);
+    font-size: var(--fs-xl);
+    color: var(--accent-dark);
+    margin: var(--spacing-lg) var(--spacing-xl) var(--spacing-sm);
+}
+
+.portfolio-item p {
+    font-size: var(--fs-base);
+    color: var(--text-light);
+    margin: 0 var(--spacing-xl) var(--spacing-xl);
+}
+
+@media (max-width: 768px) {
+    .portfolio-grid {
+        gap: var(--spacing-xl);
+    }
+
+    .portfolio-item h3 {
+        font-size: var(--fs-lg);
+    }
+>>>>>>> 4e6d54d4c41d980778cca3fec2b47c3f0075bed8
+}

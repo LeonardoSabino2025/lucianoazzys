@@ -1,0 +1,61 @@
+/* Services Section Styles */
+/* Luciano Azzys - Designer de Eventos Portfolio */
+
+.services {
+    position: relative;
+    overflow: hidden;
+    background-size: 300% 300%;
+    background-image: linear-gradient(
+        -45deg,
+        var(--gray-300) 0%,
+        var(--gray-100) 25%,
+        var(--white) 51%,
+        var(--gray-400) 100%
+    );
+    animation: AnimateServicesBG 20s ease infinite;
+}
+
+@keyframes AnimateServicesBG {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.services::before {
+    content: '';
+    position: absolute;
+    top: 10%;
+    left: -5%;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(191, 98, 17, 0.1) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: floatServices 10s ease-in-out infinite;
+}
+
+.services::after {
+    content: '';
+    position: absolute;
+    bottom: 20%;
+    right: -5%;
+    width: 150px;
+    height: 150px;
+    background: radial-gradient(circle, rgba(191, 98, 17, 0.1) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: floatServices 10s ease-in-out infinite;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-3xl);
+    margin-top: var(--spacing-4xl);
+    position: relative;
+    z-index: 2;
+}

@@ -1,0 +1,41 @@
+Crie um website completo, de uma única página com seções, em formato de landing page de portfólio para o Designer de Eventos Luciano Azzys.
+
+O design deve ser sofisticado, unindo tradição e elegância, com tipografia de alta classe, cores sóbrias e imagens de altíssima qualidade. 
+
+O site deve ter uma única página com rolagem e uma barra de navegação (navbar) fixa no topo, permitindo a navegação entre as seções. 
+
+Seções da Landing Page:
+
+1. Header (Topo): Exibir um grande slideshow com fotos impressionantes de eventos. A primeira imagem deve ser a mais espetacular para cativar o visitante. * Sobreponha a foto com a frase: "Transformando sonhos em realidade com decorações inesquecíveis". 
+
+Inclua um botão de "call to action" visível com o texto "Fale Comigo" que direcione para o WhatsApp do Luciano, para isso, é importante ter o ícone do WhatsApp no botão. 
+
+2. Sobre Mim:
+Apresente a história do Luciano, sua paixão por decoração, como ele iniciou a carreira e a filosofia de trabalho. 
+
+Descreva seus valores e missão, como criatividade, exclusividade e atenção aos detalhes. 
+
+3. Serviços:
+
+Liste os serviços que ele oferece, como decoração completa, aluguel de peças, consultoria e arranjos florais. * Explique, de forma simples, o processo de trabalho, desde o primeiro contato até a finalização do evento. 
+
+4. Portfólio (Galeria de Projetos): 
+
+Esta seção deve ser o ponto central e visualmente impactante. * Estruture a galeria em um layout de grid bento para uma apresentação moderna e organizada. 
+
+Categorize os projetos por tipo de evento: Casamento, Festa de 15 Anos, Eventos Corporativos, Festas Infantis.
+
+Para cada projeto, gere fotos profissionais em alta qualidade que mostrem o salão, detalhes da decoração, arranjos e mesa de doces. * Adicione uma breve descrição para cada evento, contando a história, desafios e o conceito criativo. 
+
+5. Depoimentos:
+
+Mostre depoimentos de clientes satisfeitos para construir credibilidade. 
+
+Inclua fotos dos clientes junto aos testemunhos para maior autenticidade. 
+
+6.Contato (Footer): 
+
+Não inclua formulário de contato. 
+Exiba informações de contato essenciais: e-mail, telefone e links para redes sociais, com destaque especial para o Instagram.
+
+Use as cores: #D9BA5F, #D99748, #BF6211, #8C2703 e #590902 e Fontes do google fonts que transmitam sofisticação e elegância, sem sacrificar a leitura.
