@@ -1,0 +1,123 @@
+/* css/footer.css */
+
+.main-footer {
+    background-color: rgb(59, 7, 2);
+    color: var(--gray-100);
+    padding: var(--spacing-lg) 0 var(--spacing-md);
+    font-size: 0.95em;
+}
+
+.main-footer .container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+}
+
+.footer-col {
+    flex: 1;
+    min-width: 250px;
+    margin-bottom: var(--spacing-md);
+}
+
+.footer-col h4 {
+    font-size: 1.4em;
+    color: var(--gray-100);
+    margin-bottom: var(--spacing-md);
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.footer-col h4::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 40px;
+    height: 2px;
+    background-color: var(--accent-color);
+}
+
+.footer-col p {
+    margin-bottom: var(--spacing-sm);
+    line-height: 1.8;
+    color: var(--gray-100);
+}
+
+.footer-col ul li {
+    margin-bottom: 8px;
+}
+
+.footer-col a {
+    color: var(--gray-100);
+    transition: color var(--transition-speed) ease;
+}
+
+.footer-col a:hover {
+    color: var(--accent-primary);
+}
+
+.footer-col ul li a {
+    color: var(--gray-100);
+    transition: color var(--transition-speed) ease;
+}
+
+.footer-col ul li a:hover {
+    color: var(--accent-primary);
+}
+
+/* Links sociais */
+.social-links {
+    margin-top: var(--spacing-3xl, 2rem);
+    display: flex;
+    gap: var(--spacing-md, 1rem);
+}
+
+.social-links a {
+    color: var(--accent-primary, #D9BA5F);
+    font-size: var(--fs-2xl, 3rem);    
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+}
+
+.social-links a:hover {    
+    transform: translateY(-5px) scale(2);
+    color: var(--accent-secondary, #D99748);
+}
+
+.social-links img {
+    width: 64px;
+    height: 64px;
+}
+
+.footer-bottom {
+    background-color: var(--primary-color);
+    padding: var(--spacing-sm);
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-bottom p {
+    color: var(--gray-100);
+}
+
+.footer-bottom a {
+    color: var(--gray-100);
+    text-decoration: none;
+}
+
+.footer-bottom a:hover {
+    color: var(--accent-primary);
+}
+
+.footer-col .logo-img {
+    width: 50px;
+    height: 50px;
+    align-items: center;
+    object-fit: contain;
+    margin-bottom: var(--spacing-sm);
+}

@@ -11,7 +11,6 @@ body {
     line-height: 1.6;
     color: var(--text-color);
 }
-
 /* Headings */
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-secondary);
@@ -144,11 +143,30 @@ a:hover {
     line-height: 1;
 }
 
+.logo-text-footer {
+    font-family: var(--font-secondary);
+    font-size: var(--fs-2xl);
+    font-weight: var(--font-bold);
+    color: var(--gray-100);
+    display: block;
+    line-height: 1;
+}
+
 .logo-subtitle {
     font-family: var(--font-tertiary);
     font-size: var(--fs-sm);
     font-weight: var(--font-light);
     color: var(--text-light);
+    font-style: italic;
+    display: block;
+    line-height: 1;
+}
+
+.logo-subtitle-footer {
+    font-family: var(--font-tertiary);
+    font-size: var(--fs-sm);
+    font-weight: var(--font-light);
+    color: var(--gray-100);
     font-style: italic;
     display: block;
     line-height: 1;
