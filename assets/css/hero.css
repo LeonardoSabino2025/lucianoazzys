@@ -8,7 +8,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
+    /* overflow: hidden; */ /* Mantido comentado como recomendado */
     color: var(--text-white);
 }
 
@@ -136,7 +136,6 @@
     position: relative;
 }
 
-
 /* Animations */
 @keyframes fadeInUp {
     from {
@@ -221,7 +220,35 @@
     }
 }
 
-/* Responsive Hero */
+/* Estilos para a animação do botão do WhatsApp */
+.cta-button {
+    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.cta-button.is-fixed {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1040;
+    width: 60px;
+    height: 60px;
+    padding: 0;
+    font-size: 0;
+    border-radius: 50%;
+    box-shadow: var(--shadow-xl);
+    transform: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cta-button.is-fixed i {
+    font-size: 2.5rem;
+    margin-right: 0;
+    transform: translate(8px, 0px);
+}
+
+/* Responsive - Mobile First */
 @media (max-width: 768px) {
     .hero {
         min-height: 600px;
@@ -239,6 +266,15 @@
     .scroll-indicator {
         bottom: var(--spacing-xl);
     }
+    
+    .hero .curve-divider,
+    .hero .curve-divider-alt {
+        height: 60px;
+    }
+    
+    .hero .curve-divider::after {
+        height: 120px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -253,7 +289,8 @@
     .hero::after,
     .hero::before {
         display: none;
-    }
+    } 
+
 }
 
 /* Prefers reduced motion */
@@ -273,33 +310,4 @@
     .hero::before {
         animation: none;
     }
-}
-
-/* Estilos para a animação do botão do WhatsApp */
-.cta-button {
-    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-
-.cta-button.is-fixed {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 1040; /* Z-index alto para ficar por cima de tudo */
-    width: 60px;
-    height: 60px;
-    padding: 0;
-    font-size: 0; /* Esconde o texto */
-    border-radius: 50%; /* Transforma o botão em um círculo */
-    box-shadow: var(--shadow-xl); /* Adiciona uma sombra para destaque */
-    transform: none; /* Reseta qualquer transformação do estado original */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* Garante que o ícone do WhatsApp fique centralizado e visível */
-.cta-button.is-fixed i {
-    font-size: 2.5rem;
-    margin-right: 0;
-    transform: translate(8px, 0px);
 }

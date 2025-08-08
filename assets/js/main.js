@@ -51,6 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const navbar = document.getElementById('navbar');
     const navLinks = document.querySelectorAll('.nav-link');
     const sections = document.querySelectorAll('section');
+    const blurOverlay = document.getElementById('blur-overlay'); // Adicione esta linha
 
     if (navbar) {
         function updateNavbar() {
@@ -82,21 +83,36 @@ document.addEventListener('DOMContentLoaded', () => {
         window.addEventListener('scroll', updateNavbar);
         window.addEventListener('load', updateNavbar);
 
-        // Rolagem suave para links internos
+        // Rolagem suave para links internos COM EFEITO DE DESFOQUE
         navLinks.forEach(link => {
             link.addEventListener('click', (e) => {
                 e.preventDefault();
                 const targetId = link.getAttribute('href').substring(1);
                 const targetSection = document.getElementById(targetId);
                 if (targetSection) {
+                    
+                    // 1. Ativa o desfoque
+                    if (blurOverlay) {
+                        blurOverlay.classList.add('active');
+                    }
+
+                    // 2. Faz a rolagem suave
                     window.scrollTo({
                         top: targetSection.offsetTop - navbar.offsetHeight,
                         behavior: 'smooth'
                     });
+
+                    // 3. Desativa o desfoque após um breve período
+                    setTimeout(() => {
+                        if (blurOverlay) {
+                            blurOverlay.classList.remove('active');
+                        }
+                    }, 500); // O tempo (500ms) deve ser um pouco maior que a sua transição no CSS
                 }
             });
         });
     }
+
 
     // 5. Video Playback Controls for Portfolio Section
     const videoItems = document.querySelectorAll('.portfolio-item');
@@ -241,4 +257,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
         observer.observe(testimonialsSection);
     }
+
+
+        // 9. Scroll Suave para links da navegação
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });    
+
 });

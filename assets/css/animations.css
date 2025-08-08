@@ -39,45 +39,27 @@
     0% { transform: translateY(0) translateX(0); }
     50% { transform: translateY(-20px) translateX(10px); }
     100% { transform: translateY(0) translateX(0); }
-/* Animations */
-/* Luciano Azzys - Designer de Eventos Portfolio */
-
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
 }
 
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+#blur-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999; /* Garante que fique acima de tudo, exceto a tela de loading */
+    pointer-events: none; /* Permite clicar nos elementos por baixo quando não está ativo */
+
+    /* Estado inicial: sem desfoque e transparente */
+    backdrop-filter: blur(0px);
+    opacity: 0;
+
+    /* Transição para suavizar a ativação do desfoque */
+    transition: backdrop-filter 0.4s ease-in-out, opacity 0.4s ease-in-out;
 }
 
-@keyframes gradientShift {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-
-@keyframes titleGlow {
-    0% { text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5), 0 0 10px rgba(217, 186, 95, 0.3); }
-    50% { text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5), 0 0 25px rgba(217, 186, 95, 0.7); }
-    100% { text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5), 0 0 10px rgba(217, 186, 95, 0.3); }
-}
-
-@keyframes scrollArrow {
-    0% { transform: translateY(0); opacity: 1; }
-    50% { transform: translateY(10px); opacity: 0.5; }
-    100% { transform: translateY(0); opacity: 1; }
-}
-
-@keyframes floatSlow {
-    0% { transform: translateY(0) translateX(0); }
-    50% { transform: translateY(-20px) translateX(10px); }
-    100% { transform: translateY(0) translateX(0); }
+/* Estado ativo: aplica o desfoque e se torna visível */
+#blur-overlay.active {
+    backdrop-filter: blur(10px); /* Ajuste a intensidade do desfoque aqui (10px é um bom começo) */
+    opacity: 1;
 }

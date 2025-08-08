@@ -6,7 +6,7 @@
     background: #D9BA5F;
     position: relative;
     overflow: hidden;
-    padding: var(--section-padding, 4rem 0);
+    padding: var(--section-padding, 4rem 0);    
 }
 
 /* Efeito de gradiente animado - Versão melhorada */
