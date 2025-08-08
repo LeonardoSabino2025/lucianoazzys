@@ -1,54 +1,60 @@
 /* Services Section Styles */
 /* Luciano Azzys - Designer de Eventos Portfolio */
 
+/* Efeito de gradiente animado linear para a seção de serviços */
+
 .services {
+    background: var(--gray-100);
     position: relative;
     overflow: hidden;
-    background-size: 300% 300%;
-    background-image: linear-gradient(
-        -45deg,
-        var(--gray-300) 0%,
-        var(--gray-100) 25%,
-        var(--white) 51%,
-        var(--gray-400) 100%
-    );
-    animation: AnimateServicesBG 20s ease infinite;
-}
-
-@keyframes AnimateServicesBG {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
-}
-
-.services::before {
-    content: '';
-    position: absolute;
-    top: 10%;
-    left: -5%;
-    width: 200px;
-    height: 200px;
-    background: radial-gradient(circle, rgba(191, 98, 17, 0.1) 0%, transparent 70%);
-    border-radius: 50%;
-    animation: floatServices 10s ease-in-out infinite;
 }
 
 .services::after {
     content: '';
     position: absolute;
-    bottom: 20%;
-    right: -5%;
-    width: 150px;
-    height: 150px;
-    background: radial-gradient(circle, rgba(191, 98, 17, 0.1) 0%, transparent 70%);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(
+        -45deg,
+        var(--gray-300) 0%,
+        var(--gray-100) 25%,
+        var(--white) 50%,
+        var(--gray-400) 75%,
+        var(--gray-300) 100%
+    );
+    background-size: 200% 200%;
+    animation: gradientFlow 10s ease infinite;
+    z-index: 0;
+    opacity: 0.7;
+    mix-blend-mode: multiply;
+}
+
+@keyframes gradientFlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Efeito de bolha flutuante */
+.services::before {
+    content: '';
+    position: absolute;
+    top: -10%;
+    left: -5%;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgb(206, 212, 218) 0%, transparent 70%); /* Usando o valor RGB de --gray-400 com opacidade */
     border-radius: 50%;
-    animation: floatServices 10s ease-in-out infinite;
+    animation: floatEffect 12s ease-in-out infinite alternate;
+    z-index: 0;
+}
+
+@keyframes floatEffect {
+    0% { transform: translateY(0) translateX(0) scale(1); }
+    50% { transform: translateY(-40px) translateX(20px) scale(1.05); }
+    100% { transform: translateY(20px) translateX(-10px) scale(0.95); }
 }
 
 .services-grid {

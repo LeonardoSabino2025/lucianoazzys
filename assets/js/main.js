@@ -170,4 +170,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
         observer.observe(homeSection);
     }
+
+    // 7. Testimonials Carousel Navigation
+    const testimonialsCarousel = document.querySelector('.testimonials-carousel');
+    const prevArrow = document.querySelector('.slider-arrow.prev');
+    const nextArrow = document.querySelector('.slider-arrow.next');
+    const cardWidth = document.querySelector('.testimonial-card').offsetWidth;
+    const gap = 48; // Corresponde ao --spacing-2xl de 3rem (1rem = 16px)
+
+    if (testimonialsCarousel && prevArrow && nextArrow) {
+        // Função para passar para o próximo slide
+        nextArrow.addEventListener('click', () => {
+            testimonialsCarousel.scrollBy({
+                left: cardWidth + gap,
+                behavior: 'smooth'
+            });
+        });
+
+        // Função para voltar para o slide anterior
+        prevArrow.addEventListener('click', () => {
+            testimonialsCarousel.scrollBy({
+                left: -(cardWidth + gap),
+                behavior: 'smooth'
+            });
+        });
+    }
+    
 });
