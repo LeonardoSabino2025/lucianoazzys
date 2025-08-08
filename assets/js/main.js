@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 // main.js - Luciano Azzys Portfolio
 
 document.addEventListener('DOMContentLoaded', () => {
