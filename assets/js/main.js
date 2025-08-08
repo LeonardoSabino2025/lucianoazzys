@@ -1,6 +1,7 @@
 // main.js - Luciano Azzys Portfolio
 
 document.addEventListener('DOMContentLoaded', () => {
+
     // 1. Loading Screen Animation
     const loadingScreen = document.getElementById('loading');
     if (loadingScreen) {
@@ -9,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 loadingScreen.classList.add('fade-out');
                 setTimeout(() => {
                     loadingScreen.style.display = 'none';
-                }, 800); // tempo da transição em CSS
+                }, 800); // Tempo da transição em CSS
             }, 500); // 0.5s de delay para exibir o texto de carregamento
         });
     }
@@ -18,13 +19,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const slides = document.querySelectorAll('.slide');
     if (slides.length > 0) {
         let currentSlide = 0;
-        const slideInterval = setInterval(nextSlide, 5000); // muda a cada 5 segundos
-
-        function nextSlide() {
+        setInterval(() => {
             slides[currentSlide].classList.remove('active');
             currentSlide = (currentSlide + 1) % slides.length;
             slides[currentSlide].classList.add('active');
-        }
+        }, 5000); // Muda a cada 5 segundos
     }
 
     // 3. Hamburger Menu Toggle
@@ -36,8 +35,8 @@ document.addEventListener('DOMContentLoaded', () => {
             navMenu.classList.toggle('active');
             hamburger.classList.toggle('active');
         });
-        
-        // Close menu when a link is clicked (for mobile)
+
+        // Fecha o menu ao clicar em um link (para mobile)
         document.querySelectorAll('.nav-link').forEach(link => {
             link.addEventListener('click', () => {
                 if (navMenu.classList.contains('active')) {
@@ -55,14 +54,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (navbar) {
         function updateNavbar() {
-            // Navbar Scrolled Effect
+            // Efeito de rolagem na Navbar
             if (window.scrollY > 50) {
                 navbar.classList.add('scrolled');
             } else {
                 navbar.classList.remove('scrolled');
             }
 
-            // Scrollspy - Highlight active link
+            // Scrollspy - Destaca o link ativo
             let current = '';
             sections.forEach(section => {
                 const sectionTop = section.offsetTop - navbar.offsetHeight - 20;
@@ -83,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
         window.addEventListener('scroll', updateNavbar);
         window.addEventListener('load', updateNavbar);
 
-        // Smooth scroll for internal links
+        // Rolagem suave para links internos
         navLinks.forEach(link => {
             link.addEventListener('click', (e) => {
                 e.preventDefault();
@@ -107,7 +106,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (!video || !playButton) return;
 
-        // Show/hide play button and play/pause video on click
         const toggleVideoPlayback = () => {
             if (video.paused) {
                 video.play();
@@ -118,23 +116,19 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         };
 
-        // Listen for clicks on the play button
         playButton.addEventListener('click', (e) => {
             e.stopPropagation();
             toggleVideoPlayback();
         });
 
-        // Listen for clicks on the entire video item to play/pause
         item.addEventListener('click', () => {
             toggleVideoPlayback();
         });
 
-        // Show play button when video ends
         video.addEventListener('ended', () => {
             playButton.classList.remove('hidden');
         });
 
-        // Pause other videos when a new one starts
         video.addEventListener('play', () => {
             document.querySelectorAll('video').forEach(otherVideo => {
                 if (otherVideo !== video && !otherVideo.paused) {
@@ -175,11 +169,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const testimonialsCarousel = document.querySelector('.testimonials-carousel');
     const prevArrow = document.querySelector('.slider-arrow.prev');
     const nextArrow = document.querySelector('.slider-arrow.next');
-    const cardWidth = document.querySelector('.testimonial-card').offsetWidth;
-    const gap = 48; // Corresponde ao --spacing-2xl de 3rem (1rem = 16px)
+    const cardElement = document.querySelector('.testimonial-card');
+    const gap = 48; // Corresponde a 3rem
 
-    if (testimonialsCarousel && prevArrow && nextArrow) {
-        // Função para passar para o próximo slide
+    if (testimonialsCarousel && prevArrow && nextArrow && cardElement) {
+        const cardWidth = cardElement.offsetWidth;
+        
         nextArrow.addEventListener('click', () => {
             testimonialsCarousel.scrollBy({
                 left: cardWidth + gap,
@@ -187,7 +182,6 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
 
-        // Função para voltar para o slide anterior
         prevArrow.addEventListener('click', () => {
             testimonialsCarousel.scrollBy({
                 left: -(cardWidth + gap),
@@ -195,5 +189,56 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
-    
+
+   // 8. Glitter Animation for Testimonials Section - Ajustado
+    const testimonialsSection = document.querySelector('.testimonials');
+    if (testimonialsSection) {
+        const glitterCount = 40; // AUMENTADO: Mais partículas para um efeito mais intenso
+
+        const createGlitter = () => {
+            const particle = document.createElement('div');
+            particle.classList.add('glitter-particle');
+
+            // Escolha aleatória entre dourado e prateado
+            if (Math.random() > 0.5) {
+                particle.classList.add('gold');
+                particle.style.background = 'var(--accent-primary)';
+            } else {
+                particle.classList.add('silver');
+            }
+
+            // Posição inicial aleatória na horizontal e um pouco acima do topo
+            const startPosition = Math.random() * 100;
+            particle.style.left = `${startPosition}vw`;
+            particle.style.top = `-${Math.random() * 20}px`; // Inicia um pouco acima do topo
+
+            const size = Math.random() * 2 + 1; // Tamanhos um pouco menores
+            particle.style.width = `${size}px`;
+            particle.style.height = `${size}px`;
+            particle.style.animationDuration = `${Math.random() * 6 + 4}s`; // Duração entre 4 e 10 segundos
+            particle.style.animationDelay = `${Math.random() * 3}s`; // Delay inicial
+
+            testimonialsSection.appendChild(particle);
+
+            particle.addEventListener('animationend', () => {
+                particle.remove();
+            });
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                        return;
+                    }
+                    // Cria uma quantidade maior de glitters quando a seção está visível
+                    for (let i = 0; i < glitterCount; i++) {
+                        setTimeout(createGlitter, i * 200); // Intervalo menor para criar mais rapidamente
+                    }
+                }
+            });
+        }, { threshold: 0.1 });
+
+        observer.observe(testimonialsSection);
+    }
 });

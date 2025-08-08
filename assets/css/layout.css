@@ -175,6 +175,7 @@
 
 .card:hover {
     box-shadow: var(--shadow-xl, 0 20px 25px rgba(0, 0, 0, 0.1));
+    box-shadow: var(--shadow-lg, 0 0 10px #D9BA5F(0, 0, 0, 0.5));
     transform: translateY(-5px);
     border-color: var(--accent-primary, #D9BA5F);
 }
