@@ -1,37 +1,49 @@
-<<<<<<< HEAD
-/* Contact Section Styles */
-/* Luciano Azzys - Designer de Eventos Portfolio */
+/* ============================================= */
+/* Contact Section Styles - Luciano Azzys Portfolio */
+/* ============================================= */
 
 .contact {
-    background: var(--bg-color);
+    background-color: var(--bg-color, #ffffff);
+    padding: var(--section-padding, 4rem 0);
+    position: relative;
 }
 
 .contact-content {
     display: grid;
-    grid-template-columns: 1fr 1.5fr;
-    gap: var(--spacing-5xl);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-5xl, 3rem);
     align-items: flex-start;
 }
 
+/* Informações de Contato */
 .contact-info {
-    background: linear-gradient(135deg, var(--gray-100) 0%, var(--white) 100%);
-    padding: var(--spacing-4xl);
-    border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-md);
+    background: linear-gradient(
+        135deg, 
+        var(--gray-100, #f5f5f5) 0%, 
+        var(--white, #ffffff) 100%
+    );
+    padding: var(--spacing-4xl, 2.5rem);
+    border-radius: var(--radius-lg, 1rem);
+    box-shadow: var(--shadow-md, 0 4px 6px rgba(0, 0, 0, 0.1));
+    position: relative;
+    overflow: hidden;
 }
 
 .contact-info h3 {
-    font-family: var(--font-secondary);
-    color: var(--accent-dark);
-    margin-bottom: var(--spacing-md);
+    font-family: var(--font-secondary, 'Playfair Display', serif);
+    color: var(--accent-dark, #8C2703);
+    margin-bottom: var(--spacing-md, 1rem);
+    font-size: var(--fs-3xl, 1.75rem);
 }
 
 .contact-info p {
-    font-size: var(--fs-lg);
-    color: var(--text-light);
-    margin-bottom: var(--spacing-2xl);
+    font-size: var(--fs-lg, 1.125rem);
+    color: var(--text-light, #666666);
+    margin-bottom: var(--spacing-2xl, 2rem);
+    line-height: 1.6;
 }
 
+/* Lista de Informações */
 .info-list {
     list-style: none;
     padding: 0;
@@ -41,210 +53,150 @@
 .info-list li {
     display: flex;
     align-items: center;
-    gap: var(--spacing-md);
-    margin-bottom: var(--spacing-xl);
-    font-size: var(--fs-lg);
-    color: var(--text-color);
+    gap: var(--spacing-md, 1rem);
+    margin-bottom: var(--spacing-xl, 1.5rem);
+    font-size: var(--fs-lg, 1.125rem);
+    color: var(--text-color, #333333);
 }
 
 .info-list li .fas,
 .info-list li .fab {
-    font-size: var(--fs-xl);
-    color: var(--accent-primary);
+    font-size: var(--fs-xl, 1.5rem);
+    color: var(--accent-primary, #D9BA5F);
     width: 25px;
     text-align: center;
+    flex-shrink: 0;
 }
 
 .info-list li a {
-    color: var(--text-color);
+    color: var(--text-color, #333333);
     text-decoration: none;
+    transition: color 0.3s ease;
 }
 
 .info-list li a:hover {
-    color: var(--accent-primary);
+    color: var(--accent-primary, #D9BA5F);
+    text-decoration: underline;
 }
 
+/* Links Sociais */
 .social-links {
-    margin-top: var(--spacing-3xl);
+    margin-top: var(--spacing-3xl, 2.5rem);
     display: flex;
-    gap: var(--spacing-lg);
+    gap: var(--spacing-lg, 1.5rem);
 }
 
 .social-links a {
-    color: var(--accent-primary);
-    font-size: var(--fs-2xl);
-    transition: transform 0.3s ease;
+    color: var(--accent-primary, #D9BA5F);
+    font-size: var(--fs-2xl, 1.75rem);
+    transition: all 0.3s ease;
+    display: inline-block;
 }
 
 .social-links a:hover {
     transform: translateY(-5px) scale(1.1);
-    color: var(--accent-tertiary);
+    color: var(--accent-tertiary, #BF6211);
 }
 
+/* Formulário de Contato */
 .contact-form {
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-xl);
-    background: var(--bg-color);
-    padding: var(--spacing-4xl);
-    border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-md);
+    gap: var(--spacing-xl, 1.5rem);
+    background-color: var(--bg-color, #ffffff);
+    padding: var(--spacing-4xl, 2.5rem);
+    border-radius: var(--radius-lg, 1rem);
+    box-shadow: var(--shadow-md, 0 4px 6px rgba(0, 0, 0, 0.1));
 }
 
 .form-group {
     display: flex;
     flex-direction: column;
+    gap: var(--spacing-sm, 0.5rem);
 }
 
 .form-group label {
-    font-family: var(--font-primary);
-    font-size: var(--fs-base);
-    font-weight: var(--font-medium);
-    margin-bottom: var(--spacing-sm);
-    color: var(--text-dark);
+    font-family: var(--font-primary, 'Montserrat', sans-serif);
+    font-size: var(--fs-base, 1rem);
+    font-weight: var(--font-medium, 500);
+    color: var(--text-dark, #222222);
 }
 
 .form-group input,
 .form-group textarea,
 .form-group select {
-    padding: var(--spacing-md);
-    border: 1px solid var(--gray-300);
-    border-radius: var(--radius-sm);
-    font-family: var(--font-primary);
-    font-size: var(--fs-base);
+    padding: var(--spacing-md, 1rem);
+    border: 1px solid var(--gray-300, #d1d5db);
+    border-radius: var(--radius-sm, 0.5rem);
+    font-family: var(--font-primary, 'Montserrat', sans-serif);
+    font-size: var(--fs-base, 1rem);
     transition: all 0.3s ease;
-    background: var(--gray-100);
+    background-color: var(--gray-100, #f5f5f5);
+    width: 100%;
+}
+
+.form-group textarea {
+    min-height: 150px;
+    resize: vertical;
 }
 
 .form-group input:focus,
 .form-group textarea:focus,
 .form-group select:focus {
     outline: none;
-    border-color: var(--accent-primary);
+    border-color: var(--accent-primary, #D9BA5F);
     box-shadow: 0 0 0 3px rgba(217, 186, 95, 0.1);
-=======
-/* Contact Section Styles */
-/* Luciano Azzys - Designer de Eventos Portfolio */
-
-.contact {
-    background: var(--bg-color);
+    background-color: var(--white, #ffffff);
 }
 
-.contact-content {
-    display: grid;
-    grid-template-columns: 1fr 1.5fr;
-    gap: var(--spacing-5xl);
-    align-items: flex-start;
-}
-
-.contact-info {
-    background: linear-gradient(135deg, var(--gray-100) 0%, var(--white) 100%);
-    padding: var(--spacing-4xl);
-    border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-md);
-}
-
-.contact-info h3 {
-    font-family: var(--font-secondary);
-    color: var(--accent-dark);
-    margin-bottom: var(--spacing-md);
-}
-
-.contact-info p {
-    font-size: var(--fs-lg);
-    color: var(--text-light);
-    margin-bottom: var(--spacing-2xl);
-}
-
-.info-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.info-list li {
-    display: flex;
-    align-items: center;
-    gap: var(--spacing-md);
-    margin-bottom: var(--spacing-xl);
-    font-size: var(--fs-lg);
-    color: var(--text-color);
-}
-
-.info-list li .fas,
-.info-list li .fab {
-    font-size: var(--fs-xl);
-    color: var(--accent-primary);
-    width: 25px;
-    text-align: center;
-}
-
-.info-list li a {
-    color: var(--text-color);
-    text-decoration: none;
-}
-
-.info-list li a:hover {
-    color: var(--accent-primary);
-}
-
-.social-links {
-    margin-top: var(--spacing-3xl);
-    display: flex;
-    gap: var(--spacing-lg);
-}
-
-.social-links a {
-    color: var(--accent-primary);
-    font-size: var(--fs-2xl);
-    transition: transform 0.3s ease;
-}
-
-.social-links a:hover {
-    transform: translateY(-5px) scale(1.1);
-    color: var(--accent-tertiary);
-}
-
-.contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-xl);
-    background: var(--bg-color);
-    padding: var(--spacing-4xl);
-    border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-md);
-}
-
-.form-group {
-    display: flex;
-    flex-direction: column;
-}
-
-.form-group label {
-    font-family: var(--font-primary);
-    font-size: var(--fs-base);
-    font-weight: var(--font-medium);
-    margin-bottom: var(--spacing-sm);
-    color: var(--text-dark);
-}
-
-.form-group input,
-.form-group textarea,
-.form-group select {
-    padding: var(--spacing-md);
-    border: 1px solid var(--gray-300);
-    border-radius: var(--radius-sm);
-    font-family: var(--font-primary);
-    font-size: var(--fs-base);
+/* Botão de Envio (adicionado) */
+.contact-form button[type="submit"] {
+    background: linear-gradient(
+        135deg,
+        var(--accent-primary, #D9BA5F),
+        var(--accent-secondary, #D99748)
+    );
+    color: white;
+    padding: var(--spacing-md, 1rem);
+    border: none;
+    border-radius: var(--radius-sm, 0.5rem);
+    font-family: var(--font-primary, 'Montserrat', sans-serif);
+    font-size: var(--fs-lg, 1.125rem);
+    font-weight: var(--font-semibold, 600);
+    cursor: pointer;
     transition: all 0.3s ease;
-    background: var(--gray-100);
+    margin-top: var(--spacing-md, 1rem);
 }
 
-.form-group input:focus,
-.form-group textarea:focus,
-.form-group select:focus {
-    outline: none;
-    border-color: var(--accent-primary);
-    box-shadow: 0 0 0 3px rgba(217, 186, 95, 0.1);
->>>>>>> 4e6d54d4c41d980778cca3fec2b47c3f0075bed8
+.contact-form button[type="submit"]:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg, 0 10px 15px rgba(0, 0, 0, 0.1));
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .contact-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-info,
+    .contact-form {
+        padding: var(--spacing-2xl, 1.5rem);
+    }
+    
+    .info-list li {
+        font-size: var(--fs-base, 1rem);
+    }
+}
+
+@media (max-width: 480px) {
+    .social-links {
+        justify-content: center;
+    }
+    
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+        padding: var(--spacing-sm, 0.75rem);
+    }
 }

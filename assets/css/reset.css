@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /* CSS Reset */
 /* Luciano Azzys - Designer de Eventos Portfolio */
 
@@ -104,7 +103,7 @@ button, input[type="submit"], input[type="reset"] {
 ::selection {
     background-color: var(--accent-primary);
     color: white;
-=======
+
 /* CSS Reset */
 /* Luciano Azzys - Designer de Eventos Portfolio */
 
@@ -210,5 +209,4 @@ button, input[type="submit"], input[type="reset"] {
 ::selection {
     background-color: var(--accent-primary);
     color: white;
->>>>>>> 4e6d54d4c41d980778cca3fec2b47c3f0075bed8
 }

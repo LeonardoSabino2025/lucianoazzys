@@ -1,52 +1,108 @@
-/* Navigation Styles */
-/* Luciano Azzys - Designer de Eventos Portfolio */
+/* ============================================= */
+/* Navigation Styles - Luciano Azzys Portfolio */
+/* ============================================= */
+
+:root {
+    /* Fallback values for CSS variables */
+    --z-fixed: 1000;
+    --z-modal: 1050;
+    --transition-normal: all 0.3s ease;
+    --container-max: 1200px;
+    --container-padding: 1.5rem;
+    --spacing-sm: 0.75rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+    --spacing-2xl: 3rem;
+    --radius-sm: 0.25rem;
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-2xl: 0 25px 50px rgba(0, 0, 0, 0.25);
+    --font-primary: 'Montserrat', sans-serif;
+    --fs-base: 1rem;
+    --fs-lg: 1.125rem;
+    --font-medium: 500;
+    --text-dark: #333333;
+    --gradient-primary: linear-gradient(135deg, #D9BA5F 0%, #D99748 100%);
+    --accent-primary: #D9BA5F;
+    --accent-secondary: #D99748;
+    --accent-tertiary: #BF6211;
+    --accent-dark: #8C2703;
+}
+
+/* ===================== */
+/* Base Navigation */
+/* ===================== */
 
 .navbar {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    background: rgba(255, 255, 255, 0.95);
+    background-color: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border-bottom: 1px solid rgba(217, 186, 95, 0.2);
-    z-index: var(--z-fixed);
-    transition: var(--transition-normal);
-    padding: var(--spacing-md) 0;
+    z-index: var(--z-fixed, 1000);
+    transition: var(--transition-normal, all 0.3s ease);
+    padding: var(--spacing-md, 1rem) 0;
+    will-change: transform, background, padding;
 }
 
 .navbar.scrolled {
-    background: rgba(255, 255, 255, 0.98);
-    box-shadow: var(--shadow-md);
-    padding: var(--spacing-sm) 0;
+    background-color: rgba(255, 255, 255, 0.98);
+    box-shadow: var(--shadow-md, 0 4px 6px rgba(0, 0, 0, 0.1));
+    padding: var(--spacing-sm, 0.75rem) 0;
 }
 
 .nav-container {
-    max-width: var(--container-max);
+    max-width: var(--container-max, 1200px);
     margin: 0 auto;
-    padding: 0 var(--container-padding);
+    padding: 0 var(--container-padding, 1.5rem);
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 100%;
 }
+
+/* ===================== */
+/* Logo Styles */
+/* ===================== */
 
 .nav-logo {
     display: flex;
     flex-direction: column;
     text-decoration: none;
-    transition: var(--transition-normal);
+    transition: var(--transition-normal, all 0.3s ease);
 }
 
 .nav-logo:hover {
-    transform: scale(1.05);
+    transform: scale(1.02);
 }
+
+.logo-text {
+    font-family: var(--font-secondary, 'Playfair Display', serif);
+    font-size: var(--fs-xl, 1.5rem);
+    font-weight: var(--font-bold, 700);
+    color: var(--accent-dark, #8C2703);
+}
+
+.logo-subtitle {
+    font-family: var(--font-primary, 'Montserrat', sans-serif);
+    font-size: var(--fs-xs, 0.75rem);
+    color: var(--text-light, #666666);
+    letter-spacing: 0.1em;
+}
+
+/* ===================== */
+/* Navigation Menu */
+/* ===================== */
 
 .nav-menu {
     display: flex;
     list-style: none;
     margin: 0;
     padding: 0;
-    gap: var(--spacing-2xl);
+    gap: var(--spacing-xl, 2rem);
     align-items: center;
 }
 
@@ -55,16 +111,16 @@
 }
 
 .nav-link {
-    font-family: var(--font-primary);
-    font-size: var(--fs-base);
-    font-weight: var(--font-medium);
-    color: var(--text-dark);
+    font-family: var(--font-primary, 'Montserrat', sans-serif);
+    font-size: var(--fs-base, 1rem);
+    font-weight: var(--font-medium, 500);
+    color: var(--text-dark, #333333);
     text-decoration: none;
     text-transform: uppercase;
     letter-spacing: 0.1em;
     position: relative;
-    padding: var(--spacing-sm) 0;
-    transition: var(--transition-normal);
+    padding: var(--spacing-xs, 0.5rem) 0;
+    transition: var(--transition-normal, all 0.3s ease);
 }
 
 .nav-link::before {
@@ -74,14 +130,14 @@
     left: 50%;
     width: 0;
     height: 2px;
-    background: var(--gradient-primary);
-    transition: var(--transition-normal);
+    background: var(--gradient-primary, linear-gradient(135deg, #D9BA5F 0%, #D99748 100%));
+    transition: var(--transition-normal, all 0.3s ease);
     transform: translateX(-50%);
 }
 
 .nav-link:hover,
 .nav-link.active {
-    color: var(--accent-primary);
+    color: var(--accent-primary, #D9BA5F);
 }
 
 .nav-link:hover::before,
@@ -89,100 +145,115 @@
     width: 100%;
 }
 
+/* ===================== */
 /* Hamburger Menu */
+/* ===================== */
+
 .hamburger {
     display: none;
     flex-direction: column;
+    justify-content: center;
     cursor: pointer;
-    padding: var(--spacing-sm);
-    transition: var(--transition-normal);
+    padding: var(--spacing-sm, 0.75rem);
+    transition: var(--transition-normal, all 0.3s ease);
+    z-index: var(--z-modal, 1050);
+    background: transparent;
+    border: none;
 }
 
 .hamburger:hover {
     transform: scale(1.1);
 }
 
+.hamburger:focus {
+    outline: none;
+}
+
 .bar {
     width: 25px;
-    height: 3px;
-    background: var(--accent-primary);
+    height: 2px;
+    background-color: var(--accent-primary, #D9BA5F);
     margin: 3px 0;
-    transition: var(--transition-normal);
-    border-radius: var(--radius-sm);
+    transition: var(--transition-normal, all 0.3s ease);
+    border-radius: var(--radius-sm, 0.25rem);
+    transform-origin: center;
 }
 
 /* Hamburger Animation */
 .hamburger.active .bar:nth-child(1) {
-    transform: rotate(-45deg) translate(-5px, 6px);
-    background: var(--accent-secondary);
+    transform: translateY(6px) rotate(-45deg);
+    background-color: var(--accent-secondary, #D99748);
 }
 
 .hamburger.active .bar:nth-child(2) {
     opacity: 0;
+    transform: scaleX(0);
 }
 
 .hamburger.active .bar:nth-child(3) {
-    transform: rotate(45deg) translate(-5px, -6px);
-    background: var(--accent-secondary);
+    transform: translateY(-6px) rotate(45deg);
+    background-color: var(--accent-secondary, #D99748);
 }
 
+/* ===================== */
 /* Mobile Navigation */
+/* ===================== */
+
 @media (max-width: 768px) {
     .nav-container {
-        padding: 0 1rem;
+        padding: 0 var(--spacing-md, 1rem);
     }
     
     .hamburger {
         display: flex;
-        z-index: var(--z-modal);
     }
     
     .nav-menu {
         position: fixed;
         top: 0;
         right: -100%;
-        width: 300px;
+        width: min(300px, 80vw);
         height: 100vh;
-        background: rgba(255, 255, 255, 0.98);
+        background-color: rgba(255, 255, 255, 0.98);
         backdrop-filter: blur(20px);
         -webkit-backdrop-filter: blur(20px);
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        gap: var(--spacing-2xl);
-        transition: right 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        box-shadow: var(--shadow-2xl);
+        gap: var(--spacing-lg, 1.5rem);
+        transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        box-shadow: var(--shadow-2xl, 0 25px 50px rgba(0, 0, 0, 0.25));
         border-left: 1px solid rgba(217, 186, 95, 0.2);
+        z-index: calc(var(--z-modal, 1050) - 1);
     }
     
     .nav-menu.active {
-        right: 0;
+        transform: translateX(-100%);
     }
     
     .nav-link {
-        font-size: var(--fs-lg);
-        padding: var(--spacing-md) 0;
-    }
-    
-    .nav-link::before {
-        bottom: 0;
+        font-size: var(--fs-lg, 1.125rem);
+        padding: var(--spacing-sm, 0.75rem) 0;
     }
     
     /* Mobile menu overlay */
-    .nav-menu::before {
+    .nav-menu::after {
         content: '';
         position: fixed;
         top: 0;
-        left: -100vw;
+        left: 0;
         width: 100vw;
         height: 100vh;
-        background: rgba(0, 0, 0, 0.5);
-        transition: left 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        background-color: rgba(0, 0, 0, 0.5);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         z-index: -1;
     }
     
-    .nav-menu.active::before {
-        left: -300px;
+    .nav-menu.active::after {
+        opacity: 1;
+        pointer-events: all;
     }
 }
 
@@ -192,12 +263,15 @@
         right: -100%;
     }
     
-    .nav-menu.active::before {
-        left: -100vw;
+    .nav-menu.active {
+        transform: translateX(-100%);
     }
 }
 
-/* Navigation scroll effects */
+/* ===================== */
+/* Navigation Effects */
+/* ===================== */
+
 .navbar.navbar-hidden {
     transform: translateY(-100%);
 }
@@ -211,33 +285,55 @@ html {
     scroll-padding-top: 80px;
 }
 
-/* Navigation active states with different colors */
-.nav-link[href="#home"]:hover,
+/* ===================== */
+/* Active State Colors */
+/* ===================== */
+
 .nav-link[href="#home"].active {
-    color: var(--accent-primary);
+    color: var(--accent-primary, #D9BA5F);
 }
 
-.nav-link[href="#about"]:hover,
 .nav-link[href="#about"].active {
-    color: var(--accent-secondary);
+    color: var(--accent-secondary, #D99748);
 }
 
-.nav-link[href="#services"]:hover,
 .nav-link[href="#services"].active {
-    color: var(--accent-tertiary);
+    color: var(--accent-tertiary, #BF6211);
 }
 
-.nav-link[href="#portfolio"]:hover,
 .nav-link[href="#portfolio"].active {
-    color: var(--accent-dark);
+    color: var(--accent-dark, #8C2703);
 }
 
-.nav-link[href="#testimonials"]:hover,
 .nav-link[href="#testimonials"].active {
-    color: var(--accent-secondary);
+    color: var(--accent-secondary, #D99748);
 }
 
-.nav-link[href="#contact"]:hover,
 .nav-link[href="#contact"].active {
-    color: var(--accent-primary);
+    color: var(--accent-primary, #D9BA5F);
+}
+
+/* Hover colors */
+.nav-link[href="#home"]:hover {
+    color: var(--accent-primary, #D9BA5F);
+}
+
+.nav-link[href="#about"]:hover {
+    color: var(--accent-secondary, #D99748);
+}
+
+.nav-link[href="#services"]:hover {
+    color: var(--accent-tertiary, #BF6211);
+}
+
+.nav-link[href="#portfolio"]:hover {
+    color: var(--accent-dark, #8C2703);
+}
+
+.nav-link[href="#testimonials"]:hover {
+    color: var(--accent-secondary, #D99748);
+}
+
+.nav-link[href="#contact"]:hover {
+    color: var(--accent-primary, #D9BA5F);
 }
