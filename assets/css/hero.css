@@ -136,42 +136,6 @@
     position: relative;
 }
 
-.scroll-arrow::before {
-    content: '';
-    position: absolute;
-    top: -10px;
-    left: -1px;
-    width: 2px;
-    height: 20px;
-    background: var(--text-white);
-}
-
-/* Floating Elements */
-.hero::after {
-    content: '';
-    position: absolute;
-    top: 20%;
-    right: 10%;
-    width: 100px;
-    height: 100px;
-    background: linear-gradient(45deg, rgba(217, 186, 95, 0.1), rgba(217, 151, 72, 0.1));
-    border-radius: 50%;
-    animation: float 6s ease-in-out infinite;
-    z-index: 2;
-}
-
-.hero::before {
-    content: '';
-    position: absolute;
-    top: 60%;
-    left: 5%;
-    width: 60px;
-    height: 60px;
-    background: linear-gradient(45deg, rgba(191, 98, 17, 0.1), rgba(140, 39, 3, 0.1));
-    border-radius: 50%;
-    animation: float 4s ease-in-out infinite reverse;
-    z-index: 2;
-}
 
 /* Animations */
 @keyframes fadeInUp {
