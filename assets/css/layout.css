@@ -88,6 +88,23 @@
         0 0 0 5px var(--accent-primary, #D9BA5F);
 }
 
+/* Estilo específico para o divisor da seção 'About' */
+.about .section-divider::before {
+  /* Nova cor de fundo para o círculo central, se necessário */
+  background: var(--text-dark, #590902);
+  border-radius: var(--radius-full,  9999px);
+
+  /* Novas cores para o box-shadow */
+  box-shadow:
+    0 0 0 3px var(--accent-dark, #8C2703), /* Cor mais escura da paleta */
+    0 0 0 5px var(--accent-primary, #D9BA5F); /* Cor principal para contraste */
+}
+
+/* Se precisar de um estilo para a linha principal */
+.about .section-divider {
+    background: var(--accent-dark, #8C2703);
+}
+
 /* ===================== */
 /* Grid System */
 /* ===================== */
