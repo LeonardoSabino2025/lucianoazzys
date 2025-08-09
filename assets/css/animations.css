@@ -63,3 +63,37 @@
     backdrop-filter: blur(10px); /* Ajuste a intensidade do desfoque aqui (10px é um bom começo) */
     opacity: 1;
 }
+
+**
+ * ----------------------------------------
+ * @keyframes slide-rotate-ver-r-fwd
+ * ----------------------------------------
+ */
+@-webkit-keyframes slide-rotate-ver-r-fwd {
+  0% {
+    -webkit-transform: translateX(0) translateZ(0) rotateY(0);
+            transform: translateX(0) translateZ(0) rotateY(0);
+    -webkit-transform-origin: center left;
+            transform-origin: center left;
+  }
+  100% {
+    -webkit-transform: translateX(150px) translateZ(130px) rotateY(-90deg);
+            transform: translateX(150px) translateZ(130px) rotateY(-90deg);
+    -webkit-transform-origin: center left;
+            transform-origin: center left;
+  }
+}
+@keyframes slide-rotate-ver-r-fwd {
+  0% {
+    -webkit-transform: translateX(0) translateZ(0) rotateY(0);
+            transform: translateX(0) translateZ(0) rotateY(0);
+    -webkit-transform-origin: center left;
+            transform-origin: center left;
+  }
+  100% {
+    -webkit-transform: translateX(150px) translateZ(130px) rotateY(-90deg);
+            transform: translateX(150px) translateZ(130px) rotateY(-90deg);
+    -webkit-transform-origin: center left;
+            transform-origin: center left;
+  }
+}

@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const navbar = document.getElementById('navbar');
     const navLinks = document.querySelectorAll('.nav-link');
     const sections = document.querySelectorAll('section');
-    const blurOverlay = document.getElementById('blur-overlay'); // Adicione esta linha
+    const blurOverlay = document.getElementById('blur-overlay');
 
     if (navbar) {
         function updateNavbar() {
@@ -181,28 +181,74 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(homeSection);
     }
 
-    // 7. Testimonials Carousel Navigation
+    // 7. Testimonials Carousel Navigation com Animação 3D
     const testimonialsCarousel = document.querySelector('.testimonials-carousel');
     const prevArrow = document.querySelector('.slider-arrow.prev');
     const nextArrow = document.querySelector('.slider-arrow.next');
-    const cardElement = document.querySelector('.testimonial-card');
+    const testimonialCards = document.querySelectorAll('.testimonial-card');
     const gap = 48; // Corresponde a 3rem
 
-    if (testimonialsCarousel && prevArrow && nextArrow && cardElement) {
-        const cardWidth = cardElement.offsetWidth;
-        
+    if (testimonialsCarousel && prevArrow && nextArrow && testimonialCards.length > 0) {
+        const cardWidth = testimonialCards[0].offsetWidth;
+        let currentIndex = 0;
+        let isAnimating = false;
+
+        // Função para aplicar animação 3D
+        const animateCard = (card, direction = 'next') => {
+            if (!card) return;
+            
+            // Remove classes anteriores
+            card.classList.remove('slide-rotate-ver-r-fwd', 'slide-rotate-ver-l-fwd');
+            
+            // Aplica a classe de animação baseada na direção
+            if (direction === 'next') {
+                card.classList.add('slide-rotate-ver-r-fwd');
+            } else {
+                card.classList.add('slide-rotate-ver-l-fwd');
+            }
+            
+            // Remove a classe após a animação
+            setTimeout(() => {
+                card.classList.remove('slide-rotate-ver-r-fwd', 'slide-rotate-ver-l-fwd');
+            }, 500);
+        };
+
+        // Navegação para próximo card
         nextArrow.addEventListener('click', () => {
-            testimonialsCarousel.scrollBy({
-                left: cardWidth + gap,
-                behavior: 'smooth'
-            });
+            if (isAnimating) return;
+            isAnimating = true;
+
+            const currentCard = testimonialCards[currentIndex];
+            animateCard(currentCard, 'next');
+
+            setTimeout(() => {
+                testimonialsCarousel.scrollBy({
+                    left: cardWidth + gap,
+                    behavior: 'smooth'
+                });
+                
+                currentIndex = (currentIndex + 1) % testimonialCards.length;
+                isAnimating = false;
+            }, 100);
         });
 
+        // Navegação para card anterior
         prevArrow.addEventListener('click', () => {
-            testimonialsCarousel.scrollBy({
-                left: -(cardWidth + gap),
-                behavior: 'smooth'
-            });
+            if (isAnimating) return;
+            isAnimating = true;
+
+            const currentCard = testimonialCards[currentIndex];
+            animateCard(currentCard, 'prev');
+
+            setTimeout(() => {
+                testimonialsCarousel.scrollBy({
+                    left: -(cardWidth + gap),
+                    behavior: 'smooth'
+                });
+                
+                currentIndex = currentIndex === 0 ? testimonialCards.length - 1 : currentIndex - 1;
+                isAnimating = false;
+            }, 100);
         });
     }
 
