@@ -196,7 +196,6 @@
         height: 50px;
         border-radius: 50%;
         background: rgba(255, 255, 255, 0.7);
-        border: 1px solid rgba(0, 0, 0, 0.1);
         color: var(--accent-darkest);
         font-size: var(--fs-lg);
         box-shadow: var(--shadow-sm);
