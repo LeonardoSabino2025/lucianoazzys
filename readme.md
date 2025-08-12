@@ -32,6 +32,7 @@ O projeto foi desenvolvido com as seguintes stacks:
 │ └── videos/portfolio/ # Vídeos relacionados ao portfólio
 ├── .gitattributes # Configurações do Git
 ├── index.html # Página principal do projeto
+'''
 
 ### 📌 **Descrição das Pastas**  
 - **`assets/`**: Armazena todos os recursos estáticos (CSS, imagens, JS e vídeos).  
