@@ -23,10 +23,16 @@ O projeto foi desenvolvido com as seguintes stacks:
 
 ---
 
-## 🗂 **Estrutura de Pastas e Arquivos**  
-'''
 ## 📂 **Estrutura de Pastas e Arquivos**
 '''
+├── assets/
+│ ├── css/ # Arquivos de estilização (CSS)
+│ ├── images/ # Imagens utilizadas no projeto
+│ ├── js/ # Scripts JavaScript
+│ └── videos/portfolio/ # Vídeos relacionados ao portfólio
+├── .gitattributes # Configurações do Git
+├── index.html # Página principal do projeto
+
 ### 📌 **Descrição das Pastas**  
 - **`assets/`**: Armazena todos os recursos estáticos (CSS, imagens, JS e vídeos).  
 - **`css/`**: Contém folhas de estilo para o projeto.  
